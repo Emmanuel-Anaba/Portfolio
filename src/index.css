@@ -1,3 +1,32 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer utilities {
+  * {
+    @apply outline-0 duration-75;
+  }
+  nav,
+  aside,
+  main {
+    @apply border-white rounded-xl;
+  }
+  .section-heading {
+    @apply w-1/2 mx-auto text-[#777] text-center pb-4;
+  }
+  .section-heading-primary {
+    @apply text-3xl font-medium;
+  }
+  .section-heading-secondary {
+    @apply text-base;
+  }
+  .badge {
+    @apply rounded-full bg-white text-blue-700 text-[.6rem] inline-block py-[1px] px-3;
+  }
+  .form-element {
+    @apply block w-full rounded p-[.4rem] text-blue-700;
+  }
+  .btn-outline {
+    @apply bg-transparent rounded-lg border-[1px] border-white py-2 text-sm font-medium md:hover:bg-white md:hover:text-blue-700 duration-700 text-center;
+  }
+}
