@@ -138,6 +138,9 @@ const App = () => {
             </Card>
           </Section>
         ))}
+        <footer className="bg-blue-700 h-12 w-full rounded-lg grid place-items-center">
+          <p>&copy; {new Date().getFullYear()} Emmanuel Anaba Inc. 😎 </p>
+        </footer>
       </Main>
     </>
   );

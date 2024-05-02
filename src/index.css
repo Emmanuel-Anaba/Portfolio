@@ -32,4 +32,8 @@
   .btn-outline {
     @apply bg-transparent rounded-lg border-[1px] border-white py-2 text-sm font-medium md:hover:bg-white md:hover:text-blue-700 duration-700 text-center;
   }
+  .active-scroll-spy {
+    background-color: yellowgreen;
+    border-radius: 15px;
+  }
 }
