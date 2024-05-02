@@ -49,17 +49,33 @@ const App = () => {
     ],
   };
 
-  const education = {
-    hp: "Education",
-    card: [
-      {
-        school: "University Of Ibadan",
-        duration: "2024 - present",
-        degree: "Bachelor of Medicine and Surgery (MBBS)",
-        achievements: ["Volunteer, Community Health Clinic 😏"],
-      },
-    ],
-  };
+  const educationAndExperience = [
+    {
+      hp: "Education",
+      card: [
+        {
+          place: "University Of Ibadan",
+          duration: "2024 - present",
+          status: "Bachelor of Medicine and Surgery (MBBS)",
+          achievements: ["Volunteer, Community Health Clinic 😏"],
+        },
+      ],
+    },
+    {
+      hp: "Experience",
+      card: [
+        {
+          place: "Swebs Institute",
+          duration: "2023 - present",
+          status: "Junior FrontEnd Developer",
+          achievements: [
+            "Developed a personal portfolio website using HTML, CSS, and JavaScript.",
+            "Collaborated on building an e-commerce platform, using React",
+          ],
+        },
+      ],
+    },
+  ];
 
   return (
     <>
@@ -86,9 +102,7 @@ const App = () => {
               <Card
                 key={h}
                 className="bg-blue-700 rounded-lg p-4 grid gap-2 content-evenly">
-                <span className="icon">
-                  {icon}
-                </span>
+                <span className="icon">{icon}</span>
                 <p className="text-xl font-medium">{h}</p>
                 <ul>
                   {list.map((item) => (
@@ -99,20 +113,20 @@ const App = () => {
             ))}
           </div>
         </Section>
-        <Section id="education">
-          <div className="section-heading">
-            <p className="section-heading-primary">{education.hp}</p>
-          </div>
-          <Card className="bg-blue-700 rounded-md p-4 grid gap-4">
-            {education.card.map(
-              ({ school, duration, degree, achievements }) => (
-                <div key={school} className="grid md:grid-cols-2 gap-4">
+        {educationAndExperience.map(({ hp, card }) => (
+          <Section key={hp} id={hp}>
+            <div className="section-heading">
+              <p className="section-heading-primary">{hp}</p>
+            </div>
+            <Card className="bg-blue-700 rounded-md p-4 grid gap-4">
+              {card.map(({ place, duration, status, achievements }) => (
+                <div key={place} className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <p className="text-lg font-medium">{school}</p>
+                    <p className="text-lg font-medium">{place}</p>
                     <span className="badge">{duration}</span>
                   </div>
                   <div>
-                    <p className="font-medium">{degree}</p>
+                    <p className="font-medium">{status}</p>
                     <ul className="text-sm">
                       {achievements.map((item) => (
                         <li key={item}>{item}</li>
@@ -120,10 +134,10 @@ const App = () => {
                     </ul>
                   </div>
                 </div>
-              )
-            )}
-          </Card>
-        </Section>
+              ))}
+            </Card>
+          </Section>
+        ))}
       </Main>
     </>
   );
