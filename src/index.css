@@ -21,7 +21,7 @@
     @apply text-base;
   }
   .icon {
-    @apply bg-white text-blue-700 text-xl h-10 w-10 rounded mr-auto grid place-items-center;
+    @apply bg-white text-blue-700 text-xl h-10 w-10 rounded grid place-items-center;
   }
   .badge {
     @apply rounded-full bg-white text-blue-700 text-[.6rem] inline-block py-[1px] px-3;

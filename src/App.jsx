@@ -5,7 +5,13 @@ import Nav from "./sections/Nav";
 import Section from "./components/Section";
 import Card from "./components/Card";
 import me from "./assets/img/me-lg.png";
-import { FaCode, FaPalette } from "react-icons/fa6";
+import {
+  FaCode,
+  FaPalette,
+  FaMapLocationDot,
+  FaEnvelope,
+  FaPhone,
+} from "react-icons/fa6";
 import { FaMobileAlt, FaPaintBrush } from "react-icons/fa";
 
 const App = () => {
@@ -77,6 +83,36 @@ const App = () => {
     },
   ];
 
+  const contact = {
+    hp: "Get In Touch",
+    infoCards: [
+      {
+        icon: <FaMapLocationDot />,
+        info: [
+          { h: "Country:", p: "Nigeria" },
+          { h: "City:", p: "Lagos" },
+          { h: "Town:", p: "Ikeja" },
+        ],
+      },
+      {
+        icon: <FaEnvelope />,
+        info: [
+          { h: "Email:", p: "emmaanaba29@gmail.com" },
+          { h: "Skype:", p: "emmaanaba29@gmail.com" },
+          { h: "Telegram:", p: "emmaanaba29@gmail.com" },
+        ],
+      },
+      {
+        icon: <FaPhone />,
+        info: [
+          { h: "Support:", p: "ihechimereanaba@gmail.com" },
+          { h: "Office:", p: "+234 803 5706 972" },
+          { h: "Personal:", p: "+234 803 5706 972" },
+        ],
+      },
+    ],
+  };
+
   return (
     <>
       <Nav />
@@ -99,9 +135,7 @@ const App = () => {
           </div>
           <div className="grid md:grid-cols-4 gap-1">
             {services.cards.map(({ icon, h, list }) => (
-              <Card
-                key={h}
-                className="bg-blue-700 rounded-lg p-4 grid gap-2 content-evenly">
+              <Card key={h} className="p-4 grid gap-2 content-evenly">
                 <span className="icon">{icon}</span>
                 <p className="text-xl font-medium">{h}</p>
                 <ul>
@@ -118,7 +152,7 @@ const App = () => {
             <div className="section-heading">
               <p className="section-heading-primary">{hp}</p>
             </div>
-            <Card className="bg-blue-700 rounded-md p-4 grid gap-4">
+            <Card className="p-4 grid gap-4">
               {card.map(({ place, duration, status, achievements }) => (
                 <div key={place} className="grid md:grid-cols-2 gap-4">
                   <div>
@@ -138,6 +172,36 @@ const App = () => {
             </Card>
           </Section>
         ))}
+        <Section id="contact">
+          <div className="section-heading">
+            <p className="section-heading-primary">{contact.hp}</p>
+          </div>
+          <div className="grid md:grid-cols-9 gap-1">
+            <form
+              action="#"
+              className="col-span-7 bg-blue-700 rounded-lg p-4 grid">
+              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non
+              blanditiis id sed odio, possimus, molestiae aliquam est ab magni
+              modi corrupti voluptatem neque culpa ipsam laborum ea recusandae
+              debitis delectus.
+            </form>
+            <div className="col-span-2 grid gap-1">
+              {contact.infoCards.map(({ icon, info }) => (
+                <Card
+                  key={icon}
+                  className="rounded-md bg-blue-700 p-3 grid items-center gap-2 text-xs">
+                  <span className="icon m-auto">{icon}</span>
+                  {info.map(({ h, p }) => (
+                    <div key={h} className="flex items-center justify-between">
+                      <span>{h}</span>
+                      <span>{p}</span>
+                    </div>
+                  ))}
+                </Card>
+              ))}
+            </div>
+          </div>
+        </Section>
         <footer className="bg-blue-700 h-12 w-full rounded-lg grid place-items-center">
           <p>&copy; {new Date().getFullYear()} Emmanuel Anaba Inc. 😎 </p>
         </footer>
