@@ -30,10 +30,12 @@
     @apply block w-full rounded p-[.4rem] text-blue-700;
   }
   .btn-outline {
-    @apply bg-transparent rounded-lg border-[1px] border-white py-2 text-sm font-medium md:hover:bg-white md:hover:text-blue-700 duration-700 text-center;
+    @apply bg-transparent rounded border-[1px] border-white py-2 text-sm font-medium md:hover:bg-white md:hover:text-blue-700 duration-700 text-center;
   }
-  .active-scroll-spy {
-    background-color: yellowgreen;
-    border-radius: 15px;
+  .progress-bar-wrap {
+    @apply block h-[2px] bg-blue-500 rounded-full overflow-hidden;
+  }
+  .progress-bar {
+    @apply bg-white block h-full rounded-full duration-1000;
   }
 }

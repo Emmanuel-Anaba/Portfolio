@@ -148,7 +148,7 @@ const App = () => {
           </div>
         </Section>
         {educationAndExperience.map(({ hp, card }) => (
-          <Section key={hp} id={hp}>
+          <Section key={hp} id={hp.toLowerCase()}>
             <div className="section-heading">
               <p className="section-heading-primary">{hp}</p>
             </div>
@@ -186,16 +186,16 @@ const App = () => {
               debitis delectus.
             </form>
             <div className="col-span-2 grid gap-1">
-              {contact.infoCards.map(({ icon, info }) => (
+              {contact.infoCards.map(({ icon, info }, i) => (
                 <Card
-                  key={icon}
+                  key={i}
                   className="rounded-md bg-blue-700 p-3 grid items-center gap-2 text-xs">
                   <span className="icon m-auto">{icon}</span>
                   {info.map(({ h, p }) => (
-                    <div key={h} className="flex items-center justify-between">
-                      <span>{h}</span>
-                      <span>{p}</span>
-                    </div>
+                    <p key={h}>
+                      {h}
+                      <i className="float-right">{p}</i>
+                    </p>
                   ))}
                 </Card>
               ))}
