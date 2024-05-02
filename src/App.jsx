@@ -1,15 +1,53 @@
+import { useTypewriter, Cursor } from "react-simple-typewriter";
 import Aside from "./sections/Aside";
 import Main from "./sections/Main";
 import Nav from "./sections/Nav";
-
-import { useTypewriter, Cursor } from "react-simple-typewriter";
+import Section from "./components/Section";
+import Card from "./components/Card";
 import me from "./assets/img/me-lg.png";
+import { FaCode, FaPalette } from "react-icons/fa6";
+import { FaMobileAlt, FaPaintBrush } from "react-icons/fa";
 
 const App = () => {
   const [text] = useTypewriter({
     words: ["Front End Developer", "Pianist", "Doctor"],
     loop: Infinity,
   });
+
+  const services = {
+    hp: "My Services",
+    hs: "I provide personalized services that transcend the conventional, guaranteeing a distinctive and influential presence in the digital sphere",
+    cards: [
+      {
+        icon: <FaCode />,
+        h: "Web Development",
+        list: ["FrontEnd", "BackEnd", "CMS"],
+      },
+      {
+        icon: <FaMobileAlt />,
+        h: "App Development",
+        list: [
+          "Android Development",
+          "iOS Development",
+          "Cross-Platform Development",
+        ],
+      },
+      {
+        icon: <FaPalette />,
+        h: "UI/UX Design",
+        list: [
+          "Information Architecture",
+          "Visual Design",
+          "Accessibilty Design",
+        ],
+      },
+      {
+        icon: <FaPaintBrush />,
+        h: "Graphics Design",
+        list: ["Web and Digital Design", "Logo Design", "CMS"],
+      },
+    ],
+  };
 
   return (
     <>
@@ -26,6 +64,29 @@ const App = () => {
           </div>
           <img className="h-full" src={me} alt="me" />
         </header>
+        <Section id="services">
+          <div className="section-heading">
+            <p className="section-heading-primary">{services.hp}</p>
+            <p className="section-heading-secondary">{services.hs}</p>
+          </div>
+          <div className="grid md:grid-cols-4 gap-1">
+            {services.cards.map(({ icon, h, list }) => (
+              <Card
+                key={h}
+                className="bg-blue-700 rounded-lg p-4 grid gap-2 content-evenly">
+                <span className="icon">
+                  {icon}
+                </span>
+                <p className="text-xl font-medium">{h}</p>
+                <ul>
+                  {list.map((item) => (
+                    <li key={item}>&rarr; {item}</li>
+                  ))}
+                </ul>
+              </Card>
+            ))}
+          </div>
+        </Section>
       </Main>
     </>
   );
