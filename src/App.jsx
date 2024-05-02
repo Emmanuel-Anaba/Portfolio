@@ -49,6 +49,18 @@ const App = () => {
     ],
   };
 
+  const education = {
+    hp: "Education",
+    card: [
+      {
+        school: "University Of Ibadan",
+        duration: "2024 - present",
+        degree: "Bachelor of Medicine and Surgery (MBBS)",
+        achievements: ["Volunteer, Community Health Clinic 😏"],
+      },
+    ],
+  };
+
   return (
     <>
       <Nav />
@@ -86,6 +98,31 @@ const App = () => {
               </Card>
             ))}
           </div>
+        </Section>
+        <Section id="education">
+          <div className="section-heading">
+            <p className="section-heading-primary">{education.hp}</p>
+          </div>
+          <Card className="bg-blue-700 rounded-md p-4 grid gap-4">
+            {education.card.map(
+              ({ school, duration, degree, achievements }) => (
+                <div key={school} className="grid md:grid-cols-2 gap-4">
+                  <div>
+                    <p className="text-lg font-medium">{school}</p>
+                    <span className="badge">{duration}</span>
+                  </div>
+                  <div>
+                    <p className="font-medium">{degree}</p>
+                    <ul className="text-sm">
+                      {achievements.map((item) => (
+                        <li key={item}>{item}</li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              )
+            )}
+          </Card>
         </Section>
       </Main>
     </>
