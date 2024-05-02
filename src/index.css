@@ -20,6 +20,9 @@
   .section-heading-secondary {
     @apply text-base;
   }
+  .active {
+    @apply bg-white text-blue-700 text-sm h-7 w-7 rounded grid place-items-center relative;
+  }
   .icon {
     @apply bg-white text-blue-700 text-xl h-10 w-10 rounded grid place-items-center;
   }
@@ -37,5 +40,15 @@
   }
   .progress-bar {
     @apply bg-white block h-full rounded-full duration-1000;
+  }
+  .meImg::before {
+    @apply content-[""] absolute w-4 h-4 rounded-full right-1 bottom-1 bg-[#18d26e] border-2;
+  }
+  .active::before {
+    @apply content-["Home"] text-white absolute rounded-full -left-1/2 bottom-1/2 translate-y-1/2 text-xs opacity-0 duration-700;
+    writing-mode: vertical-lr;
+  }
+  .active:hover::before {
+    @apply opacity-100 -translate-x-1/2;
   }
 }

@@ -98,7 +98,9 @@ const Aside = () => {
   return (
     <aside className="hidden bg-blue-700 sticky top-14 h-[calc(100svh-3.5rem)] border-4 border-t-0 w-52 md:grid content-between p-4">
       <div className="grid place-items-center cursor-default">
-        <img className="rounded-full" src={me} alt="me" />
+        <div className="meImg relative">
+          <img className="rounded-full h-20 border-2" src={me} alt="me" />
+        </div>
         <p className="font-medium">Emmanuel Anaba</p>
         <span className="badge">FrontEnd Developer</span>
         <div className="text-sm flex flex-wrap justify-evenly mt-2 w-full">
