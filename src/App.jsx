@@ -163,7 +163,7 @@ const App = () => {
                     <p className="font-medium">{status}</p>
                     <ul className="text-sm">
                       {achievements.map((item) => (
-                        <li key={item}>{item}</li>
+                        <li key={item}>&rarr; {item}</li>
                       ))}
                     </ul>
                   </div>
@@ -179,13 +179,55 @@ const App = () => {
           <div className="grid md:grid-cols-9 gap-1">
             <form
               action="#"
-              className="col-span-7 bg-blue-700 rounded-lg p-4 grid">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non
-              blanditiis id sed odio, possimus, molestiae aliquam est ab magni
-              modi corrupti voluptatem neque culpa ipsam laborum ea recusandae
-              debitis delectus.
+              className="bg-blue-700 rounded-lg p-4 md:col-span-7 grid md:grid-cols-2 gap-4">
+              <p className="md:col-span-2">Leave A Message</p>
+              <div>
+                <label htmlFor="Name">Name</label>
+                <input
+                  className="form-element"
+                  type="text"
+                  name="Name"
+                  id="Name"
+                  required
+                />
+              </div>
+              <div>
+                <label htmlFor="Email">Email</label>
+                <input
+                  className="form-element"
+                  type="email"
+                  name="Email"
+                  id="Email"
+                  required
+                />
+              </div>
+              <div className="md:col-span-2">
+                <label htmlFor="Subject">Subject</label>
+                <input
+                  className="form-element"
+                  type="text"
+                  name="Subject"
+                  id="Subject"
+                  required
+                />
+              </div>
+              <div className="md:col-span-2">
+                <label htmlFor="Message">Message</label>
+                <textarea
+                  className="form-element"
+                  type="text"
+                  name="Message"
+                  rows={5}
+                  id="Message"
+                  required></textarea>
+              </div>
+              <button
+                className="btn-outline px-4 my-auto mr-auto"
+                type="submit">
+                Send Message
+              </button>
             </form>
-            <div className="col-span-2 grid gap-1">
+            <div className="grid md:col-span-2 gap-1">
               {contact.infoCards.map(({ icon, info }, i) => (
                 <Card
                   key={i}

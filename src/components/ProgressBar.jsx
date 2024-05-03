@@ -2,7 +2,7 @@
 const ProgressBar = ({ width }) => {
   return (
     <span className="progress-bar-wrap">
-      <span className={`progress-bar`} style={{ width: `${width}%` }}></span>
+      <span className="progress-bar" style={{ width: `${width}%` }}></span>
     </span>
   );
 };

@@ -96,7 +96,7 @@ const Aside = () => {
   ];
 
   return (
-    <aside className="hidden bg-blue-700 sticky top-14 h-[calc(100svh-3.5rem)] border-4 border-t-0 w-52 md:grid content-between p-4">
+    <aside className="hidden bg-blue-700 sticky top-14 h-[calc(100svh-3.5rem)] border-4 border-t-0 w-52 lg:grid content-between p-4">
       <div className="grid place-items-center cursor-default">
         <div className="meImg relative">
           <img className="rounded-full h-20 border-2" src={me} alt="me" />

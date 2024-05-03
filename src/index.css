@@ -11,6 +11,10 @@
   main {
     @apply border-white rounded-xl;
   }
+  nav::after,
+  nav::before {
+    @apply content-[""] absolute w-3 h-1 -top-1 bg-white;
+  }
   .section-heading {
     @apply md:w-4/6 lg:w-1/2 mx-auto text-[#777] text-center pb-4;
   }
@@ -20,8 +24,11 @@
   .section-heading-secondary {
     @apply text-base;
   }
-  .active {
-    @apply bg-white text-blue-700 text-sm h-7 w-7 rounded grid place-items-center relative;
+  .nav-icon {
+    @apply text-sm h-7 w-7 rounded grid place-items-center relative;
+  }
+  .nav-icon:hover > span {
+    @apply opacity-100 -translate-y-3/4;
   }
   .icon {
     @apply bg-white text-blue-700 text-xl h-10 w-10 rounded grid place-items-center;
@@ -43,12 +50,5 @@
   }
   .meImg::before {
     @apply content-[""] absolute w-4 h-4 rounded-full right-1 bottom-1 bg-[#18d26e] border-2;
-  }
-  .active::before {
-    @apply content-["Home"] text-white absolute rounded-full -left-1/2 bottom-1/2 translate-y-1/2 text-xs opacity-0 duration-700;
-    writing-mode: vertical-lr;
-  }
-  .active:hover::before {
-    @apply opacity-100 -translate-x-1/2;
   }
 }
