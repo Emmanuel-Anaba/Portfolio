@@ -21,11 +21,11 @@ const Aside = () => {
     },
     {
       skill: "Bootstrap",
-      percentage: 85,
+      percentage: 80,
     },
     {
       skill: "Tailwind",
-      percentage: 90,
+      percentage: 85,
     },
     {
       skill: "JavaScript",

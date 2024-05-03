@@ -18,6 +18,7 @@ const App = () => {
   const [text] = useTypewriter({
     words: ["Front End Developer", "Pianist", "Doctor"],
     loop: Infinity,
+    delaySpeed: 2500,
   });
 
   const services = {
@@ -122,7 +123,7 @@ const App = () => {
           <div className="grid gap-4">
             <p className="text-5xl font-medium">Hi! 👋 I&apos;m Emmanuel</p>
             <p className="text-4xl">
-              A {text}
+              <i>{text}</i>
               <Cursor />
             </p>
           </div>
@@ -180,7 +181,7 @@ const App = () => {
             <form
               action="#"
               className="bg-blue-700 rounded-lg p-4 md:col-span-7 grid md:grid-cols-2 gap-4">
-              <p className="md:col-span-2">Leave A Message</p>
+              <p className="font-medium md:col-span-2">Leave A Message</p>
               <div>
                 <label htmlFor="Name">Name</label>
                 <input
