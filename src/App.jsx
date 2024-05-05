@@ -1,10 +1,9 @@
-import { useTypewriter, Cursor } from "react-simple-typewriter";
 import Aside from "./sections/Aside";
 import Main from "./sections/Main";
 import Nav from "./sections/Nav";
+import Header from "./sections/Header";
 import Section from "./components/Section";
 import Card from "./components/Card";
-import me from "./assets/img/me-lg.png";
 import {
   FaCode,
   FaPalette,
@@ -15,12 +14,6 @@ import {
 import { FaMobileAlt, FaPaintBrush } from "react-icons/fa";
 
 const App = () => {
-  const [text] = useTypewriter({
-    words: ["Front End Developer", "Pianist", "Doctor"],
-    loop: Infinity,
-    delaySpeed: 2500,
-  });
-
   const services = {
     hp: "My Services",
     hs: "I provide personalized services that transcend the conventional, guaranteeing a distinctive and influential presence in the digital sphere",
@@ -119,16 +112,7 @@ const App = () => {
       <Nav />
       <Aside />
       <Main>
-        <header className="bg-blue-700 w-full h-[85svh] rounded-lg grid md:grid-cols-2 items-center lg:justify-between px-4 gap-4">
-          <div className="grid gap-4">
-            <p className="text-5xl font-medium">Hi! 👋 I&apos;m Emmanuel</p>
-            <p className="text-4xl">
-              <i>{text}</i>
-              <Cursor />
-            </p>
-          </div>
-          <img className="h-full" src={me} alt="me" />
-        </header>
+        <Header />
         <Section id="services">
           <div className="section-heading">
             <p className="section-heading-primary">{services.hp}</p>
@@ -178,6 +162,7 @@ const App = () => {
             <p className="section-heading-primary">{contact.hp}</p>
           </div>
           <div className="grid md:grid-cols-9 gap-1">
+            {/* I'm thinking of moving the form into a separate component  */}
             <form
               action="#"
               className="bg-blue-700 rounded-lg p-4 md:col-span-7 grid md:grid-cols-2 gap-4">

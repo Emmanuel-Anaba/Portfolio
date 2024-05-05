@@ -60,7 +60,7 @@ const Aside = () => {
     },
     {
       h: "Age",
-      p: "17 Years",
+      p: `${new Date().getFullYear() - 2007} Years`,
     },
     {
       h: "Freelance",

@@ -25,10 +25,10 @@
     @apply text-base;
   }
   .nav-icon {
-    @apply text-sm h-7 w-7 rounded grid place-items-center relative;
+    @apply text-lg rounded grid place-items-center relative;
   }
-  .nav-icon:hover > span {
-    @apply opacity-100 -translate-y-3/4;
+  .nav-icon span {
+    @apply text-xs;
   }
   .icon {
     @apply bg-white text-blue-700 text-xl h-10 w-10 rounded grid place-items-center;

@@ -1,2 +1,3 @@
-I want to have a bar that corresponds with a number that i'll give it
 Formik to handle the form
+Onsubmit, display a simple thank u message "Your details have been received! You'll recieve a message shortly."
+Send the details to my email
