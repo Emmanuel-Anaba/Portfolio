@@ -12,6 +12,7 @@ import {
   FaPhone,
 } from "react-icons/fa6";
 import { FaMobileAlt, FaPaintBrush } from "react-icons/fa";
+import img from "./assets/img/ben.jpeg";
 
 const App = () => {
   const services = {
@@ -76,6 +77,27 @@ const App = () => {
       ],
     },
   ];
+
+  const testimonials = {
+    hp: "Testimonials",
+    cards: [
+      {
+        img: img,
+        text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos consectetur sed in incidunt voluptatibus a debitis recusandae! Impedit pariatur nulla, delectus dolor praesentium dicta nam est, voluptatem voluptatibus a debitis recusandae! Impedit pariatur nulla, delectus",
+        name: "Onyedika Benjamin",
+      },
+      {
+        img: img,
+        text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos consectetur sed in incidunt voluptatibus a debitis recusandae! Impedit pariatur nulla, delectus dolor praesentium dicta nam est, voluptatem voluptatibus a debitis recusandae! Impedit pariatur nulla, delectus",
+        name: "Onyedika Benjamin",
+      },
+      {
+        img: img,
+        text: "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Eos consectetur sed in incidunt voluptatibus a debitis recusandae! Impedit pariatur nulla, delectus dolor praesentium dicta nam est, voluptatem voluptatibus a debitis recusandae! Impedit pariatur nulla, delectus",
+        name: "Onyedika Benjamin",
+      },
+    ],
+  };
 
   const contact = {
     hp: "Get In Touch",
@@ -157,6 +179,22 @@ const App = () => {
             </Card>
           </Section>
         ))}
+        <Section>
+          <div className="section-heading">
+            <p className="section-heading-primary">{testimonials.hp}</p>
+          </div>
+          <div className="grid md:grid-cols-3 gap-1">
+            {testimonials.cards.map(({ img, text, name }, i) => (
+              <Card key={i} className="p-4 cursor-default">
+                <div className="circle">
+                  <img src={img} alt={name} />
+                </div>
+                <p>{text}</p>
+                <p className="text-right font-medium">{name}</p>
+              </Card>
+            ))}
+          </div>
+        </Section>
         <Section id="contact">
           <div className="section-heading">
             <p className="section-heading-primary">{contact.hp}</p>

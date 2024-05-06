@@ -51,4 +51,8 @@
   .meImg::before {
     @apply content-[""] absolute w-4 h-4 rounded-full right-1 bottom-1 bg-[#18d26e] border-2;
   }
+  .circle {
+    @apply rounded-full w-24 h-24 overflow-hidden float-left mr-4;
+    shape-outside: circle(50%);
+  }
 }
