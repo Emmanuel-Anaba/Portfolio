@@ -13,6 +13,7 @@ import {
 } from "react-icons/fa6";
 import { FaMobileAlt, FaPaintBrush } from "react-icons/fa";
 import img from "./assets/img/ben.jpeg";
+import Form from "./sections/Form";
 
 const App = () => {
   const services = {
@@ -201,56 +202,7 @@ const App = () => {
           </div>
           <div className="grid md:grid-cols-9 gap-1">
             {/* I'm thinking of moving the form into a separate component  */}
-            <form
-              action="#"
-              className="bg-blue-700 rounded-lg p-4 md:col-span-7 grid md:grid-cols-2 gap-4">
-              <p className="font-medium md:col-span-2">Leave A Message</p>
-              <div>
-                <label htmlFor="Name">Name</label>
-                <input
-                  className="form-element"
-                  type="text"
-                  name="Name"
-                  id="Name"
-                  required
-                />
-              </div>
-              <div>
-                <label htmlFor="Email">Email</label>
-                <input
-                  className="form-element"
-                  type="email"
-                  name="Email"
-                  id="Email"
-                  required
-                />
-              </div>
-              <div className="md:col-span-2">
-                <label htmlFor="Subject">Subject</label>
-                <input
-                  className="form-element"
-                  type="text"
-                  name="Subject"
-                  id="Subject"
-                  required
-                />
-              </div>
-              <div className="md:col-span-2">
-                <label htmlFor="Message">Message</label>
-                <textarea
-                  className="form-element"
-                  type="text"
-                  name="Message"
-                  rows={5}
-                  id="Message"
-                  required></textarea>
-              </div>
-              <button
-                className="btn-outline px-4 my-auto mr-auto"
-                type="submit">
-                Send Message
-              </button>
-            </form>
+            <Form />
             <div className="grid md:col-span-2 gap-1">
               {contact.infoCards.map(({ icon, info }, i) => (
                 <Card

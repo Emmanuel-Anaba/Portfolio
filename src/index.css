@@ -36,8 +36,15 @@
   .badge {
     @apply rounded-full bg-white text-blue-700 text-[.6rem] inline-block py-[1px] px-3;
   }
-  .form-element {
+  input,
+  textarea {
     @apply block w-full rounded p-[.4rem] text-blue-700;
+  }
+  .input-error {
+    @apply border-blue-300 border-2;
+  }
+  .error{
+    @apply text-blue-300 text-xs;
   }
   .btn-outline {
     @apply bg-transparent rounded border-[1px] border-white py-2 text-sm font-medium md:hover:bg-white md:hover:text-blue-700 duration-700 text-center;
